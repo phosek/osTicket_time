@@ -219,6 +219,8 @@ if($_POST && !$errors):
             }
             if (!$errors && ($response=$ticket->postReply($vars, $errors,
                             $alert))) {
+				$te_response = $vars['response'];
+				include ROOT_DIR.'PH_scripts/time/write_time.inc.php';
                 $msg = sprintf(__('%s: Reply posted successfully'),
                         sprintf(__('Ticket #%s'),
                             sprintf('<a href="tickets.php?id=%d"><b>%s</b></a>',
@@ -270,7 +272,8 @@ if($_POST && !$errors):
 
             $wasOpen = ($ticket->isOpen());
             if(($note=$ticket->postNote($vars, $errors, $thisstaff))) {
-
+				$te_response = $vars['note'];
+				include ROOT_DIR.'PH_scripts/time/write_time.inc.php';
                 $msg = sprintf(__('%s: %s posted successfully'),
                         sprintf(__('Ticket #%s'),
                             sprintf('<a href="tickets.php?id=%d"><b>%s</b></a>',

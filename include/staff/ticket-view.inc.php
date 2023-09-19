@@ -1123,6 +1123,7 @@ if ($errors['err'] && isset($_POST['a'])) {
                     </select>
                 </td>
             </tr>
+			<?php include ROOT_DIR.'PH_scripts/time/time_form.inc.php';?>
          </tbody>
         </table>
         <p  style="text-align:center;">
@@ -1213,6 +1214,7 @@ if ($errors['err'] && isset($_POST['a'])) {
                     &nbsp;<span class='error'>*&nbsp;<?php echo $errors['note_status_id']; ?></span>
                 </td>
             </tr>
+			<?php include ROOT_DIR.'PH_scripts/time/time_form.inc.php';?>
         </table>
 
        <p style="text-align:center;">

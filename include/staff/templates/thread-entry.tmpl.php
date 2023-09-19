@@ -71,9 +71,10 @@ if ($user && $cfg->isAvatarsEnabled())
         </span>
         </div>
 <?php
+		include ROOT_DIR.'PH_scripts/time/read_time.inc.php';
         echo sprintf(__('<b>%s</b> posted %s'), $name,
             sprintf('<a name="entry-%d" href="#entry-%1$s"><time %s
-                datetime="%s" data-toggle="tooltip" title="%s">%s</time></a>',
+                datetime="%s" data-toggle="tooltip" title="%s">%s</time></a>'.$te_formated_time,
                 $entry->id,
                 $timeFormat ? 'class="relative"' : '',
                 date(DateTime::W3C, Misc::db2gmtime($entry->created)),
